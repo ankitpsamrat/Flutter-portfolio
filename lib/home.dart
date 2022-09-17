@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 
 class Home extends StatefulWidget {
@@ -86,12 +87,29 @@ class _HomeState extends State<Home> {
         ),
         // The body widget will be displayed under the SlidingSheet
         // and a parallax effect can be applied to it.
-        body: Center(
-          child: Text(
-            'This widget is below the SlidingSheet',
-            style: TextStyle(
-              color: Colors.white,
-            ),
+        body: Container(
+          child: Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 50),
+                child: ShaderMask(
+                  shaderCallback: (rect) {
+                    return LinearGradient(
+                      begin: Alignment.center,
+                      end: Alignment.bottomCenter,
+                      colors: const [Colors.black, Colors.transparent],
+                    ).createShader(
+                        Rect.fromLTRB(0, 0, rect.width, rect.height));
+                  },
+                  blendMode: BlendMode.dstIn,
+                  child: Image.asset(
+                    'assets/images/mypic.png',
+                    height: 400,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
         builder: (context, state) {
@@ -126,27 +144,27 @@ class _HomeState extends State<Home> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        mySpec(Icons.android, 'Android'),
-                        mySpec(Icons.android, 'Android'),
-                        mySpec(Icons.android, 'Android'),
+                        mySpec(FontAwesomeIcons.android, 'Android'),
+                        mySpec(FontAwesomeIcons.linux, 'Linux'),
+                        mySpec(FontAwesomeIcons.apple, 'MacOS'),
                       ],
                     ),
                     SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        mySpec(Icons.android, 'Android'),
-                        mySpec(Icons.android, 'Android'),
-                        mySpec(Icons.android, 'Android'),
+                        mySpec(FontAwesomeIcons.github, 'GitHub'),
+                        mySpec(FontAwesomeIcons.aws, 'AWS'),
+                        mySpec(FontAwesomeIcons.wordpress, 'WordPress')
                       ],
                     ),
                     SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        mySpec(Icons.android, 'Android'),
-                        mySpec(Icons.android, 'Android'),
-                        mySpec(Icons.android, 'Android'),
+                        mySpec(FontAwesomeIcons.appStoreIos, 'iOS'),
+                        mySpec(FontAwesomeIcons.appStore, 'Android'),
+                        mySpec(FontAwesomeIcons.gamepad, 'Game Dev'),
                       ],
                     ),
                   ],
