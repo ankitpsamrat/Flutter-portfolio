@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomeState extends State<Home> {
+class _HomePageState extends State<HomePage> {
   //
   //
 
@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
           child: Stack(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 50),
+                margin: EdgeInsets.only(top: 35),
                 child: ShaderMask(
                   shaderCallback: (rect) {
                     return LinearGradient(
@@ -99,16 +99,42 @@ class _HomeState extends State<Home> {
                       end: Alignment.bottomCenter,
                       colors: const [Colors.black, Colors.transparent],
                     ).createShader(
-                        Rect.fromLTRB(0, 0, rect.width, rect.height));
+                      Rect.fromLTRB(0, 0, rect.width, rect.height),
+                    );
                   },
                   blendMode: BlendMode.dstIn,
                   child: Image.asset(
                     'assets/images/mypic.png',
-                    height: 400,
+                    // height: 400,
                     fit: BoxFit.contain,
                   ),
                 ),
               ),
+              Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.49,
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      'Ankit Pratap Samrat',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      'Software Developer',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
