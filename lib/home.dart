@@ -72,21 +72,52 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
+        leading: PopupMenuButton(
+          color: Colors.black,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(7),
+          ),
+          icon: Icon(Icons.menu),
+          itemBuilder: (context) => [
+            PopupMenuItem(
+              value: 1,
+              child: TextButton(
+                child: Text(
+                  'Projects',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'project');
+                },
+              ),
+            ),
+            PopupMenuItem(
+              value: 2,
+              child: TextButton(
+                child: Text(
+                  'About Me',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'about');
+                },
+              ),
+            ),
+          ],
+        ),
       ),
       body: SlidingSheet(
         elevation: 8,
         cornerRadius: 50,
         snapSpec: const SnapSpec(
-          // Enable snapping. This is true by default.
           snap: true,
-          // Set custom snapping points.
           snappings: [0.38, 0.7, 1.0],
-          // Define to what the snappings relate to. In this case,
-          // the total available space that the sheet can expand to.
           positioning: SnapPositioning.relativeToAvailableSpace,
         ),
-        // The body widget will be displayed under the SlidingSheet
-        // and a parallax effect can be applied to it.
         body: Container(
           child: Stack(
             children: [
@@ -97,7 +128,10 @@ class _HomePageState extends State<HomePage> {
                     return LinearGradient(
                       begin: Alignment.center,
                       end: Alignment.bottomCenter,
-                      colors: const [Colors.black, Colors.transparent],
+                      colors: const [
+                        Colors.black,
+                        Colors.transparent,
+                      ],
                     ).createShader(
                       Rect.fromLTRB(0, 0, rect.width, rect.height),
                     );
@@ -116,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                   top: MediaQuery.of(context).size.height * 0.49,
                 ),
                 child: Column(
-                  children: [
+                  children: const [
                     Text(
                       'Ankit Pratap Samrat',
                       style: TextStyle(
@@ -134,14 +168,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
         builder: (context, state) {
-          // This is the content of the sheet that will get
-          // scrolled, if the content is bigger than the available
-          // height of the sheet.
           return Container(
             margin: EdgeInsets.only(left: 20, right: 20, top: 30),
             height: 500,
