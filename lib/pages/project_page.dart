@@ -10,7 +10,8 @@ class ProjectPage extends StatefulWidget {
 
 class _ProjectPageState extends State<ProjectPage> {
   //
-  //
+
+  //   my project method
 
   myproject(lang, title, desc, star) {
     return Container(

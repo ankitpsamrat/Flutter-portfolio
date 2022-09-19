@@ -28,7 +28,10 @@ class _AboutPageState extends State<AboutPage> {
                   return LinearGradient(
                     begin: Alignment.center,
                     end: Alignment.bottomCenter,
-                    colors: const [Colors.black, Colors.transparent],
+                    colors: const [
+                      Colors.black,
+                      Colors.transparent,
+                    ],
                   ).createShader(
                     Rect.fromLTRB(0, 0, rect.width, rect.height),
                   );
@@ -124,10 +127,10 @@ class _AboutPageState extends State<AboutPage> {
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

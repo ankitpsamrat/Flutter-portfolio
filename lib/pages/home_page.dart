@@ -11,7 +11,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   //
-  //
+
+  //   my achivement method
 
   myAchive(nums, type) {
     return Row(
@@ -30,6 +31,8 @@ class _HomePageState extends State<HomePage> {
       ],
     );
   }
+
+  //   my specialization method
 
   mySpec(icon, tech) {
     return Container(
@@ -175,7 +178,7 @@ class _HomePageState extends State<HomePage> {
         builder: (context, state) {
           return Container(
             margin: EdgeInsets.only(left: 20, right: 20, top: 30),
-            height: 500,
+            height: 600,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -198,6 +201,15 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: 10),
                 Column(
                   children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        mySpec(FontAwesomeIcons.java, 'Java'),
+                        mySpec(FontAwesomeIcons.html5, 'HTML'),
+                        mySpec(FontAwesomeIcons.css3, 'CSS'),
+                      ],
+                    ),
+                    SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
