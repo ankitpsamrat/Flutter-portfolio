@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
@@ -19,13 +21,13 @@ class _HomePageState extends State<HomePage> {
       children: [
         Text(
           nums,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
         Container(
-          margin: EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.only(top: 10),
           child: Text(type),
         ),
       ],
@@ -38,7 +40,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
       width: 105,
       height: 115,
-      margin: EdgeInsets.all(0),
+      margin: const EdgeInsets.all(0),
       child: Card(
         color: Colors.black,
         shape: RoundedRectangleBorder(
@@ -52,10 +54,10 @@ class _HomePageState extends State<HomePage> {
                 icon,
                 color: Colors.white,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 tech,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 15,
                 ),
@@ -80,12 +82,12 @@ class _HomePageState extends State<HomePage> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(7),
           ),
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           itemBuilder: (context) => [
             PopupMenuItem(
               value: 1,
               child: TextButton(
-                child: Text(
+                child: const Text(
                   'Projects',
                   style: TextStyle(
                     color: Colors.white,
@@ -99,7 +101,7 @@ class _HomePageState extends State<HomePage> {
             PopupMenuItem(
               value: 2,
               child: TextButton(
-                child: Text(
+                child: const Text(
                   'About Me',
                   style: TextStyle(
                     color: Colors.white,
@@ -125,13 +127,13 @@ class _HomePageState extends State<HomePage> {
           child: Stack(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 35),
+                margin: const EdgeInsets.only(top: 35),
                 child: ShaderMask(
                   shaderCallback: (rect) {
-                    return LinearGradient(
+                    return const LinearGradient(
                       begin: Alignment.center,
                       end: Alignment.bottomCenter,
-                      colors: const [
+                      colors: [
                         Colors.black,
                         Colors.transparent,
                       ],
@@ -177,7 +179,7 @@ class _HomePageState extends State<HomePage> {
         ),
         builder: (context, state) {
           return Container(
-            margin: EdgeInsets.only(left: 20, right: 20, top: 30),
+            margin: const EdgeInsets.only(left: 20, right: 20, top: 30),
             height: 600,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -190,15 +192,15 @@ class _HomePageState extends State<HomePage> {
                     myAchive('35', ' Messages'),
                   ],
                 ),
-                SizedBox(height: 30),
-                Text(
+                const SizedBox(height: 30),
+                const Text(
                   'Specialization In',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Column(
                   children: [
                     Row(
@@ -209,7 +211,7 @@ class _HomePageState extends State<HomePage> {
                         mySpec(FontAwesomeIcons.css3, 'CSS'),
                       ],
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -218,7 +220,7 @@ class _HomePageState extends State<HomePage> {
                         mySpec(FontAwesomeIcons.apple, 'MacOS'),
                       ],
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -227,7 +229,7 @@ class _HomePageState extends State<HomePage> {
                         mySpec(FontAwesomeIcons.wordpress, 'WordPress')
                       ],
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

@@ -1,5 +1,8 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '/methods/url_launch_method.dart';
 
 class ProjectPage extends StatefulWidget {
   const ProjectPage({Key? key}) : super(key: key);
@@ -18,55 +21,57 @@ class _ProjectPageState extends State<ProjectPage> {
       height: 220,
       width: MediaQuery.of(context).size.width * 0.9,
       child: Card(
-        color: Color(0xff262628),
+        color: const Color(0xff262628),
         child: Container(
-          margin: EdgeInsets.only(left: 15, right: 15, top: 15),
+          margin: const EdgeInsets.only(left: 15, right: 15, top: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 lang,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 15,
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 3),
+              const SizedBox(height: 3),
               Text(
                 desc,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 12,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.star,
                     color: Colors.white,
                     size: 18,
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   Text(
                     star,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                     ),
                   ),
                   Expanded(child: Container()),
                   IconButton(
-                    onPressed: () {},
-                    icon: Icon(
+                    onPressed: () {
+                      launchURL('Github');
+                    },
+                    icon: const Icon(
                       FontAwesomeIcons.github,
                       color: Colors.white,
                     ),
@@ -85,8 +90,8 @@ class _ProjectPageState extends State<ProjectPage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Color(0xff252525),
-        title: Text('Project'),
+        backgroundColor: const Color(0xff252525),
+        title: const Text('Project'),
       ),
       body: SingleChildScrollView(
         child: Container(

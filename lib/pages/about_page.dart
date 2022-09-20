@@ -1,5 +1,8 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '/methods/url_launch_method.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({Key? key}) : super(key: key);
@@ -22,13 +25,13 @@ class _AboutPageState extends State<AboutPage> {
         child: Stack(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 60),
+              margin: const EdgeInsets.only(top: 60),
               child: ShaderMask(
                 shaderCallback: (rect) {
-                  return LinearGradient(
+                  return const LinearGradient(
                     begin: Alignment.center,
                     end: Alignment.bottomCenter,
-                    colors: const [
+                    colors: [
                       Colors.black,
                       Colors.transparent,
                     ],
@@ -51,16 +54,16 @@ class _AboutPageState extends State<AboutPage> {
               ),
               child: Column(
                 children: [
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     'Hello I am',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     'Ankit Pratap Samrat',
                     style: TextStyle(
                       color: Colors.white,
@@ -68,14 +71,14 @@ class _AboutPageState extends State<AboutPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Software Developer',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   SizedBox(
                     width: 100,
                     child: TextButton(
@@ -84,44 +87,54 @@ class _AboutPageState extends State<AboutPage> {
                         backgroundColor: Colors.white,
                         primary: Colors.black,
                       ),
-                      child: Text('Hire me'),
+                      child: const Text('Hire me'),
                     ),
                   ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
-                        onPressed: () {},
-                        icon: Icon(
+                        onPressed: () {
+                          launchURL('Instagram');
+                        },
+                        icon: const Icon(
                           FontAwesomeIcons.instagram,
                           color: Colors.white,
                         ),
                       ),
                       IconButton(
-                        onPressed: () {},
-                        icon: Icon(
+                        onPressed: () {
+                          launchURL('Linkedin');
+                        },
+                        icon: const Icon(
                           FontAwesomeIcons.linkedin,
                           color: Colors.white,
                         ),
                       ),
                       IconButton(
-                        onPressed: () {},
-                        icon: Icon(
+                        onPressed: () {
+                          launchURL('Github');
+                        },
+                        icon: const Icon(
                           FontAwesomeIcons.github,
                           color: Colors.white,
                         ),
                       ),
                       IconButton(
-                        onPressed: () {},
-                        icon: Icon(
+                        onPressed: () {
+                          launchURL('Twitter');
+                        },
+                        icon: const Icon(
                           FontAwesomeIcons.twitter,
                           color: Colors.white,
                         ),
                       ),
                       IconButton(
-                        onPressed: () {},
-                        icon: Icon(
+                        onPressed: () {
+                          launchURL('Facebook');
+                        },
+                        icon: const Icon(
                           FontAwesomeIcons.facebook,
                           color: Colors.white,
                         ),

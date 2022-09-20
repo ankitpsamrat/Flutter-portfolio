@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myport2/pages/about_page.dart';
-import 'package:myport2/pages/home_page.dart';
-import 'package:myport2/pages/project_page.dart';
+import '/pages/about_page.dart';
+import '/pages/home_page.dart';
+import '/pages/project_page.dart';
 
 void main() {
   runApp(
@@ -10,9 +10,9 @@ void main() {
       title: 'SAMRAT',
       initialRoute: 'home',
       routes: {
-        'home': (context) => HomePage(),
-        'about': (context) => AboutPage(),
-        'project': (context) => ProjectPage(),
+        'home': (context) => const HomePage(),
+        'about': (context) => const AboutPage(),
+        'project': (context) => const ProjectPage(),
       },
     ),
   );
