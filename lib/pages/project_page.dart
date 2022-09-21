@@ -108,7 +108,7 @@ class _ProjectPageState extends State<ProjectPage> {
               myproject(
                 'JAVA',
                 'Travel management system',
-                'Travel and tourism management system with database.',
+                'Travel and tourism management system with mysql database.',
                 '10',
               ),
               myproject(
@@ -116,6 +116,18 @@ class _ProjectPageState extends State<ProjectPage> {
                 'Instagram clone',
                 'Instagram clone with basic feature & firebase database.',
                 '8',
+              ),
+              myproject(
+                'FLUTTER',
+                'Quiz application',
+                'Very simple quiz application.',
+                '9',
+              ),
+              myproject(
+                'HTML, CSS',
+                'Portfolio website',
+                'My simple & fully responsive portfolio website.',
+                '10',
               ),
             ],
           ),
