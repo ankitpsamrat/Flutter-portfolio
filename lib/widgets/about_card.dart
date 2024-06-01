@@ -11,7 +11,7 @@ class AboutCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220,
+      // height: 220,
       width: MediaQuery.of(context).size.width * 0.9,
       child: Card(
         color: const Color(0xff262628),
@@ -34,8 +34,6 @@ class AboutCard extends StatelessWidget {
       ),
     );
 
-
-    
 //     return Padding(
 //       padding: const EdgeInsets.all(0),
 //       child: DecoratedBox(

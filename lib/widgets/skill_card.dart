@@ -26,10 +26,11 @@ class SkillCard extends StatelessWidget {
           width: 95,
           height: 95,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8),
-                child: SvgPicture.network(techUrl, height: 50),
+                child: SvgPicture.network(techUrl, height: 40),
               ),
               Text(
                 techName,
@@ -68,10 +69,11 @@ class SkillCard2 extends StatelessWidget {
           width: 95,
           height: 95,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8),
-                child: Image.network(techUrl, height: 50),
+                child: Image.network(techUrl, height: 40),
               ),
               Text(
                 techName,
