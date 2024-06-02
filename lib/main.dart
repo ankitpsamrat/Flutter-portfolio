@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import '/pages/about_page.dart';
-import '/pages/home_page.dart';
-import '/pages/project_page.dart';
+import 'package:myport2/services/navigation_service.dart';
+import 'package:myport2/src/pages/contact_page.dart';
+import 'src/pages/about_page.dart';
+import 'src/pages/home_page.dart';
+import 'src/pages/project_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: NavigationService.navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'SAMRAT',
       initialRoute: 'home',
@@ -20,6 +23,7 @@ class MyApp extends StatelessWidget {
         'home': (context) => const HomePage(),
         'about': (context) => const AboutPage(),
         'project': (context) => const ProjectPage(),
+        'contact': (context) => const ContactPage(),
       },
     );
   }
