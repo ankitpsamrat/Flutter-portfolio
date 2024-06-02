@@ -30,7 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  flutter_svg: ^2.0.10+1
+  flutter_img: ^0.1.6+148
   font_awesome_flutter: ^10.7.0
   sliding_up_panel: ^2.0.0+1
   url_launcher: ^6.2.6
