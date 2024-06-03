@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../helpers/url_launch_method.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:myport2/helpers/responsive.dart';
+import 'package:myport2/helpers/url_launch_method.dart';
 
-class ProjectPage extends StatefulWidget {
+class ProjectPage extends StatelessWidget {
   const ProjectPage({Key? key}) : super(key: key);
-
-  @override
-  State<ProjectPage> createState() => _ProjectPageState();
-}
-
-class _ProjectPageState extends State<ProjectPage> {
-  //
 
   myproject(lang, title, desc, star) {
     return SizedBox(
       height: 220,
-      width: MediaQuery.of(context).size.width * 0.9,
+      width: 90 * AppUI.dw,
       child: Card(
         color: const Color(0xff262628),
         child: Container(
@@ -67,9 +61,9 @@ class _ProjectPageState extends State<ProjectPage> {
                     onPressed: () {
                       launchURL('Github');
                     },
-                    icon: const Icon(
-                      FontAwesomeIcons.github,
-                      color: Colors.white,
+                    icon: SvgPicture.asset(
+                      'assets/svgs/githubIcon.svg',
+                      height: 4 * AppUI.dh,
                     ),
                   ),
                 ],

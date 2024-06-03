@@ -1,36 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_img/flutter_img.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:myport2/helpers/responsive.dart';
+import 'package:myport2/src/widgets/common_widget.dart';
 
 class SkillCard extends StatelessWidget {
+  final String techUrl;
+  final String techName;
+
   const SkillCard({
     Key? key,
     required this.techUrl,
     required this.techName,
   }) : super(key: key);
 
-  final String techUrl;
-  final String techName;
-
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: Colors.black,
-      ),
+      decoration: CommonWidget.boxDecoration,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Img(techUrl, height: 40),
+            padding: EdgeInsets.only(bottom: 1 * AppUI.dh),
+            child: SvgPicture.asset(
+              techUrl,
+              height: 4 * AppUI.dh,
+            ),
           ),
           Text(
             techName,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 11 * AppUI.sp,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],
