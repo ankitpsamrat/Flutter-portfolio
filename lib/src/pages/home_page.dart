@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myport2/helpers/responsive.dart';
+import 'package:myport2/src/widgets/cloud_hosting.dart';
 import 'package:myport2/src/widgets/common_widget.dart';
+import 'package:myport2/src/widgets/operating_system.dart';
+import 'package:myport2/src/widgets/tech_skill.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class HomePage extends StatelessWidget {
