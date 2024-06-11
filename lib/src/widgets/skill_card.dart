@@ -8,10 +8,10 @@ class SkillCard extends StatelessWidget {
   final String techName;
 
   const SkillCard({
-    Key? key,
+    super.key,
     required this.techUrl,
     required this.techName,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

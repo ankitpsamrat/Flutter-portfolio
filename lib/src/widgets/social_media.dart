@@ -7,48 +7,46 @@ class SocialMedia extends StatelessWidget {
   SocialMedia({super.key});
 
   final Map<String, String> _socialMedia = {
-    'Facebook': 'assets/svgs/facebookIcon.svg',
-    'Instagram': 'assets/svgs/instagramIcon.svg',
-    'Twitter': 'assets/svgs/xIcon.svg',
     'LinkedIn': 'assets/svgs/linkedinIcon.svg',
     'Github': 'assets/svgs/githubIcon.svg',
+    'Instagram': 'assets/svgs/instagramIcon.svg',
+    'Facebook': 'assets/svgs/facebookIcon.svg',
+    'Twitter': 'assets/svgs/xIcon.svg',
   };
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Social media',
-          style: TextStyle(
-            fontSize: 14 * AppUI.sp,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        CommonWidget.sectionTitle('Social media'),
         GridView.builder(
           itemCount: _socialMedia.keys.length,
           shrinkWrap: true,
           padding: EdgeInsets.zero,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 2.5,
+            childAspectRatio: 2.6,
           ),
           itemBuilder: (BuildContext context, int index) {
             final String img = _socialMedia.values.elementAt(index);
             final String name = _socialMedia.keys.elementAt(index);
 
             return Container(
-              margin: EdgeInsets.all(3 * AppUI.dw),
+              margin: CommonWidget.padding,
               padding: EdgeInsets.only(left: 3 * AppUI.dw),
               decoration: CommonWidget.boxDecoration,
               child: Row(
                 children: [
-                  SvgPicture.asset(img),
+                  SvgPicture.asset(
+                    img,
+                    height: 5 * AppUI.dh,
+                  ),
                   Text(
                     '  $name',
                     style: TextStyle(
-                      fontSize: 11 * AppUI.sp,
+                      fontSize: 12 * AppUI.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
