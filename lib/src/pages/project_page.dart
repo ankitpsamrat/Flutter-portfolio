@@ -9,8 +9,8 @@ class ProjectPage extends StatelessWidget {
 
   Widget _myproject(lang, title, desc, star) {
     return Container(
-      padding: EdgeInsets.all(3 * AppUI.dw),
-      margin: EdgeInsets.all(4 * AppUI.dw),
+      margin: CommonWidget.margin,
+      padding: CommonWidget.padding,
       decoration: CommonWidget.boxDecoration,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,41 +82,39 @@ class ProjectPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: SafeArea(
-          child: Center(
-            child: Column(
-              children: [
-                _myproject(
-                  'FLUTTER',
-                  'QR Application',
-                  'Basic qr code scanner and generator application.',
-                  '8.5',
-                ),
-                _myproject(
-                  'JAVA',
-                  'Travel management system',
-                  'Travel and tourism management system with mysql database.',
-                  '10',
-                ),
-                _myproject(
-                  'FLUTTER',
-                  'Instagram clone',
-                  'Instagram clone with basic feature & firebase database.',
-                  '8',
-                ),
-                _myproject(
-                  'FLUTTER',
-                  'Quiz application',
-                  'Very simple quiz application.',
-                  '9',
-                ),
-                _myproject(
-                  'HTML, CSS',
-                  'Portfolio website',
-                  'My simple & fully responsive portfolio website.',
-                  '10',
-                ),
-              ],
-            ),
+          child: Column(
+            children: [
+              _myproject(
+                'FLUTTER',
+                'QR Application',
+                'Basic qr code scanner and generator application.',
+                '8.5',
+              ),
+              _myproject(
+                'JAVA',
+                'Travel management system',
+                'Travel and tourism management system with mysql database.',
+                '10',
+              ),
+              _myproject(
+                'FLUTTER',
+                'Instagram clone',
+                'Instagram clone with basic feature & firebase database.',
+                '8',
+              ),
+              _myproject(
+                'FLUTTER',
+                'Quiz application',
+                'Very simple quiz application.',
+                '9',
+              ),
+              _myproject(
+                'HTML, CSS',
+                'Portfolio website',
+                'My simple & fully responsive portfolio website.',
+                '10',
+              ),
+            ],
           ),
         ),
       ),

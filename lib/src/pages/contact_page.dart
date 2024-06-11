@@ -13,51 +13,116 @@ class ContactPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Contact'),
+        title: const Text('Contact'),
       ),
       body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            children: [
-              Text(
-                'Get in touch',
-                style: TextStyle(
-                  fontSize: 14 * AppUI.sp,
-                  fontWeight: FontWeight.bold,
-                ),
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CommonWidget.sectionTitle('Get in touch'),
+            Container(
+              padding: EdgeInsets.fromLTRB(
+                4 * AppUI.dw,
+                0.5 * AppUI.dw,
+                0,
+                0.5 * AppUI.dw,
               ),
-              Container(
-                padding: EdgeInsets.fromLTRB(
-                  4 * AppUI.dw,
-                  1 * AppUI.dw,
-                  0,
-                  1 * AppUI.dw,
-                ),
-                margin: EdgeInsets.all(3 * AppUI.dw),
-                decoration: CommonWidget.boxDecoration,
-                child: Row(
-                  children: [
-                    SvgPicture.asset('assets/svgs/gmailIcon.svg'),
-                    Text(
-                      '  ankit.p.15575@gmail.com',
-                      style: TextStyle(
-                        fontSize: 11 * AppUI.sp,
-                        fontWeight: FontWeight.w500,
+              margin: CommonWidget.padding,
+              decoration: CommonWidget.boxDecoration,
+              child: Row(
+                children: [
+                  SvgPicture.asset(
+                    'assets/svgs/gmailIcon.svg',
+                    height: 5 * AppUI.dh,
+                  ),
+                  Text(
+                    '  ankit.p.15575@gmail.com',
+                    style: TextStyle(
+                      fontSize: 12 * AppUI.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const Spacer(),
+                  IconButton(
+                    onPressed: () {
+                      Clipboard.setData(
+                        const ClipboardData(text: 'ankit.p.15575@gmail.com'),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          backgroundColor: Colors.green[300],
+                          content: Text(
+                            'Email copied.',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14 * AppUI.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.copy),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 2 * AppUI.dh),
+              child: SocialMedia(),
+            ),
+            CommonWidget.sectionTitle('Feedback'),
+            Container(
+              margin: CommonWidget.padding,
+              padding: CommonWidget.padding,
+              decoration: CommonWidget.boxDecoration,
+              child: Column(
+                children: [
+                  TextFormField(
+                    textInputAction: TextInputAction.next,
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      isDense: true,
+                      hintText: 'Enter your name',
+                      hintStyle: TextStyle(fontSize: 12 * AppUI.sp),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 3 * AppUI.dh),
+                    child: TextFormField(
+                      textInputAction: TextInputAction.next,
+                      decoration: InputDecoration(
+                        border: const OutlineInputBorder(),
+                        isDense: true,
+                        hintText: 'Enter your email',
+                        hintStyle: TextStyle(fontSize: 12 * AppUI.sp),
                       ),
                     ),
-                    const Spacer(),
-                    IconButton(
+                  ),
+                  TextFormField(
+                    maxLines: 5,
+                    textInputAction: TextInputAction.next,
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      isDense: true,
+                      hintText: 'Message',
+                      hintStyle: TextStyle(fontSize: 12 * AppUI.sp),
+                    ),
+                  ),
+                  Container(
+                    height: 6 * AppUI.dh,
+                    width: double.infinity,
+                    margin: EdgeInsets.only(top: 3 * AppUI.dh),
+                    child: ElevatedButton(
                       onPressed: () {
-                        Clipboard.setData(
-                          ClipboardData(text: 'ankit.p.15575@gmail.com'),
-                        );
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            backgroundColor: const Color(0xFFD3ECFF),
+                            backgroundColor: Colors.red,
                             content: Text(
-                              'Email copied.',
+                              'Sorry! under development.',
                               style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontSize: 14 * AppUI.sp,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -65,89 +130,18 @@ class ContactPage extends StatelessWidget {
                           ),
                         );
                       },
-                      icon: Icon(Icons.copy),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 2 * AppUI.dh),
-                child: SocialMedia(),
-              ),
-              Text(
-                'Feedback',
-                style: TextStyle(
-                  fontSize: 14 * AppUI.sp,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(3 * AppUI.dw),
-                padding: EdgeInsets.all(3 * AppUI.dw),
-                decoration: CommonWidget.boxDecoration,
-                child: Column(
-                  children: [
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        isDense: true,
-                        hintText: 'Enter your name',
-                        hintStyle: TextStyle(fontSize: 12 * AppUI.sp),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 3 * AppUI.dh),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          isDense: true,
-                          hintText: 'Enter your email',
-                          hintStyle: TextStyle(fontSize: 12 * AppUI.sp),
+                      child: Text(
+                        'Submit',
+                        style: TextStyle(
+                          fontSize: 14 * AppUI.sp,
                         ),
                       ),
                     ),
-                    TextFormField(
-                      maxLines: 5,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        isDense: true,
-                        hintText: 'Message',
-                        hintStyle: TextStyle(fontSize: 12 * AppUI.sp),
-                      ),
-                    ),
-                    Container(
-                      height: 6 * AppUI.dh,
-                      width: double.infinity,
-                      margin: EdgeInsets.only(top: 3 * AppUI.dh),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              backgroundColor: const Color(0xFFD3ECFF),
-                              content: Text(
-                                'Sorry! under development.',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14 * AppUI.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          'Submit',
-                          style: TextStyle(
-                            fontSize: 14 * AppUI.sp,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

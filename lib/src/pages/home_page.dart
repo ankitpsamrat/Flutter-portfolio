@@ -70,75 +70,74 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Stack(
-        children: [
-          Center(
-            child: Column(
-              children: [
-                Image.asset(
-                  'assets/images/mypic.png',
-                  height: 25 * AppUI.dh,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 4 * AppUI.dh,
-                    bottom: 1 * AppUI.dh,
-                  ),
-                  child: Text(
-                    'Ankit Pratap Samrat',
-                    style: TextStyle(
-                      fontSize: 22 * AppUI.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Text(
-                  'Flutter Developer',
-                  style: TextStyle(
-                    fontSize: 15 * AppUI.sp,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(3 * AppUI.dw),
-                  decoration: CommonWidget.boxDecoration,
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 8 * AppUI.dw,
-                    vertical: 4 * AppUI.dh,
-                  ),
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12 * AppUI.sp,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      children: const [
-                        TextSpan(
-                            text:
-                                "Hello there! I'm a passionate learner, and proficient coder. Currently, I contribute my skills and expertise as a software developer at "),
-                        TextSpan(
-                          text: 'Benny.',
-                          style: TextStyle(
-                            color: Colors.red,
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                        TextSpan(
-                            text:
-                                " Let's explore the exciting world of technology together!."),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+      body: SlidingUpPanel(
+        minHeight: 25 * AppUI.dh,
+        maxHeight: 46 * AppUI.dh,
+        borderRadius: BorderRadius.circular(20),
+        body: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 4 * AppUI.dh),
+              child: Image.asset(
+                'assets/images/mypic.png',
+                height: 25 * AppUI.dh,
+              ),
             ),
-          ),
-          SlidingUpPanel(
-            minHeight: 25 * AppUI.dh,
-            maxHeight: 97 * AppUI.dh, //47
-            borderRadius: BorderRadius.circular(20),
-            panel: Column(
+            Text(
+              'Ankit Pratap Samrat',
+              style: TextStyle(
+                fontSize: 22 * AppUI.sp,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'Flutter Developer',
+              style: TextStyle(
+                fontSize: 15 * AppUI.sp,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            Container(
+              padding: CommonWidget.padding,
+              decoration: CommonWidget.boxDecoration,
+              margin: EdgeInsets.symmetric(
+                horizontal: 4 * AppUI.dw,
+                vertical: 4 * AppUI.dh,
+              ),
+              child: RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12 * AppUI.sp,
+                    fontWeight: FontWeight.w500,
+                    wordSpacing: 1,
+                  ),
+                  children: const [
+                    TextSpan(
+                      text:
+                          "Hello there! I'm a passionate learner, and proficient coder. Currently, I contribute my skills and expertise as a software developer at ",
+                    ),
+                    TextSpan(
+                      text: 'Benny.',
+                      style: TextStyle(
+                        color: Colors.red,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                    TextSpan(
+                      text:
+                          " Let's explore the exciting world of technology together!.",
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+        panelBuilder: (sc) {
+          return SingleChildScrollView(
+            controller: sc,
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Divider(
@@ -152,8 +151,8 @@ class HomePage extends StatelessWidget {
                 OperatingSystems(),
               ],
             ),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
