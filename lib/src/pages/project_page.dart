@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:myport2/helpers/responsive.dart';
 import 'package:myport2/helpers/url_launch_method.dart';
+import 'package:myport2/services/enums.dart';
 import 'package:myport2/src/widgets/common_widget.dart';
 
 class ProjectPage extends StatelessWidget {
@@ -59,7 +60,7 @@ class ProjectPage extends StatelessWidget {
               const Spacer(),
               IconButton(
                 onPressed: () {
-                  launchURL('Github');
+                  launchURL(UrlName.github);
                 },
                 icon: SvgPicture.asset(
                   'assets/svgs/githubIcon.svg',
