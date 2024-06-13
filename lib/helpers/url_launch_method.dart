@@ -10,6 +10,7 @@ launchURL(UrlName urlName) async {
   const url4 = 'https://twitter.com/ankitpsamrat';
   const url5 = 'https://www.facebook.com/ankitpsamrat';
   const url6 = 'https://www.appbenny.com/';
+  const url7 = 'https://ankitpsamrat.netlify.app';
 
   if (urlName == UrlName.github) {
     if (await canLaunch(url)) {
@@ -44,6 +45,12 @@ launchURL(UrlName urlName) async {
   } else if (urlName == UrlName.benny) {
     if (await canLaunch(url6)) {
       await launch(url6);
+    } else {
+      throw 'Could not launch $url5';
+    }
+  } else if (urlName == UrlName.portfolio) {
+    if (await canLaunch(url7)) {
+      await launch(url7);
     } else {
       throw 'Could not launch $url5';
     }
