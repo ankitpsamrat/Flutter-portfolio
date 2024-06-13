@@ -4,5 +4,6 @@ enum UrlName {
   instagram,
   twitter,
   facebook,
+  portfolio,
   benny,
 }

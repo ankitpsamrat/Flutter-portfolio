@@ -1,5 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:myport2/helpers/responsive.dart';
+import 'package:myport2/helpers/url_launch_method.dart';
+import 'package:myport2/services/enums.dart';
 import 'package:myport2/src/widgets/cloud_hosting.dart';
 import 'package:myport2/src/widgets/common_widget.dart';
 import 'package:myport2/src/widgets/operating_system.dart';
@@ -112,19 +115,21 @@ class HomePage extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     wordSpacing: 1,
                   ),
-                  children: const [
-                    TextSpan(
+                  children: [
+                    const TextSpan(
                       text:
                           "Hello there! I'm a passionate learner, and proficient coder. Currently, I contribute my skills and expertise as a software developer at ",
                     ),
                     TextSpan(
                       text: 'Benny.',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.red,
                         decoration: TextDecoration.underline,
                       ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () => launchURL(UrlName.benny),
                     ),
-                    TextSpan(
+                    const TextSpan(
                       text:
                           " Let's explore the exciting world of technology together!.",
                     ),
