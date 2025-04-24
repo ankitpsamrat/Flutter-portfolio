@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:myport2/helpers/responsive.dart';
+import 'package:portfolio_app/helpers/responsive.dart';
 
 class CommonWidget {
   //

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:myport2/helpers/responsive.dart';
-import 'package:myport2/src/widgets/common_widget.dart';
-import 'package:myport2/src/widgets/social_media.dart';
+import 'package:portfolio_app/helpers/responsive.dart';
+import 'package:portfolio_app/src/widgets/common_widget.dart';
+import 'package:portfolio_app/src/widgets/social_media.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});

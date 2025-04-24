@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:myport2/helpers/responsive.dart';
-import 'package:myport2/src/widgets/common_widget.dart';
+import 'package:portfolio_app/helpers/responsive.dart';
+import 'package:portfolio_app/src/widgets/common_widget.dart';
 
 class SkillCard extends StatelessWidget {
   final String techUrl;

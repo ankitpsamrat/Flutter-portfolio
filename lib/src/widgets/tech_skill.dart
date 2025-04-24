@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myport2/helpers/responsive.dart';
-import 'package:myport2/src/widgets/common_widget.dart';
-import 'package:myport2/src/widgets/skill_card.dart';
+import 'package:portfolio_app/helpers/responsive.dart';
+import 'package:portfolio_app/src/widgets/common_widget.dart';
+import 'package:portfolio_app/src/widgets/skill_card.dart';
 
 class TechSkills extends StatelessWidget {
   TechSkills({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myport2/services/navigation_service.dart';
+import 'package:portfolio_app/services/navigation_service.dart';
 
 class AppUI {
   static double dw =
