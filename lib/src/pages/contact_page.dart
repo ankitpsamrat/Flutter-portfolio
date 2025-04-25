@@ -74,7 +74,7 @@ class ContactPage extends StatelessWidget {
             ),
             CommonWidget.sectionTitle('Feedback'),
             Container(
-              margin: CommonWidget.padding,
+              margin: CommonWidget.padding.copyWith(bottom: 40),
               padding: CommonWidget.padding,
               decoration: CommonWidget.boxDecoration,
               child: Column(

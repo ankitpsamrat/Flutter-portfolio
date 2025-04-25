@@ -6,6 +6,7 @@ import 'package:portfolio_app/services/enums.dart';
 import 'package:portfolio_app/src/widgets/cloud_hosting.dart';
 import 'package:portfolio_app/src/widgets/common_widget.dart';
 import 'package:portfolio_app/src/widgets/operating_system.dart';
+import 'package:portfolio_app/src/widgets/software_skill.dart';
 import 'package:portfolio_app/src/widgets/tech_skill.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
@@ -74,13 +75,13 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: SlidingUpPanel(
-        minHeight: 25 * AppUI.dh,
-        maxHeight: 46 * AppUI.dh,
+        minHeight: 30 * AppUI.dh,
+        // maxHeight: 60 * AppUI.dh,
         borderRadius: BorderRadius.circular(20),
         body: Column(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 4 * AppUI.dh),
+              padding: EdgeInsets.symmetric(vertical: 2 * AppUI.dh),
               child: Image.asset(
                 'assets/images/mypic.png',
                 height: 25 * AppUI.dh,
@@ -118,7 +119,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     const TextSpan(
                       text:
-                          "Hello there! I'm a passionate learner, and proficient coder. Currently, I contribute my skills and expertise as a software developer at ",
+                          "Hi, I'm a passionate learner, and proficient coder. Currently, I am contributing my skills and expertise as a flutter developer at ",
                     ),
                     TextSpan(
                       text: 'Benny.',
@@ -128,10 +129,6 @@ class HomePage extends StatelessWidget {
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () => launchURL(UrlName.benny),
-                    ),
-                    const TextSpan(
-                      text:
-                          " Let's explore the exciting world of technology together!.",
                     ),
                   ],
                 ),
@@ -153,7 +150,9 @@ class HomePage extends StatelessWidget {
                 ),
                 TechSkills(),
                 CloudHosting(),
+                SoftwareSkill(),
                 OperatingSystems(),
+                const SizedBox(height: 40),
               ],
             ),
           );
